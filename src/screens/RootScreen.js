@@ -11,7 +11,7 @@ function Home(props) {
   });
 
   function handleButtonPress() {
-    props.navigation.navigate('WebToNative');
+    props.navigation.navigate('WebViewUI');
   }
   return (
     <View style={styles.container}>
