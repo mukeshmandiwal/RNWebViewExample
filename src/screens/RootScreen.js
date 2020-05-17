@@ -4,14 +4,14 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 function Home(props) {
   const [titles, setTitle] = React.useState({
     links: [
-      {title: 'WebView'},
-      {title: 'WebToNativeData'},
-      {title: 'NativeToWebData'},
+      {title: 'WebViewUI'},
+      {title: 'NativeToWeb'},
+      {title: 'WebToNative'},
     ],
   });
 
-  function handleButtonPress() {
-    props.navigation.navigate('WebViewUI');
+  function handleButtonPress(route) {
+    props.navigation.navigate(route);
   }
   return (
     <View style={styles.container}>
@@ -19,7 +19,7 @@ function Home(props) {
         {titles.links.map((item, index) => (
           <TouchableOpacity
             key={index}
-            onPress={handleButtonPress}
+            onPress={() => handleButtonPress(item.title)}
             style={styles.button}>
             <Text style={styles.text}>{item.title}</Text>
           </TouchableOpacity>
