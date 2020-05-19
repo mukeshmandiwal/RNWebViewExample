@@ -7,7 +7,7 @@ function NativeToWeb(props) {
   const data = [
     'Javascript',
     'React',
-    'React Naitve',
+    'React Native',
     'graphql',
     'Typescript',
     'Webpack',
@@ -45,25 +45,27 @@ function NativeToWeb(props) {
       <SafeAreaView style={styles.flexContainer}>
         <WebView
           source={{
-            html: `<body style="display:flex;justify-content:center;flex-direction:column;align-items:center"><h2>React native webview</h2>
-            <h2>React native webview data transfer between Native to web</h2>
-            <button style="color:green; height:100;width:300;font-size:30px" onclick="myFunction()">Close webview</button>
-            <p id="demo"></p>
-            <script>
-            var newData = [];
-             document.addEventListener("message", function(data) {
-                 newData.push(data.data)
-                 alert(data.data)
-                 var i, len, text;
-                 for (i = 0, len = newData.length, text = ""; i < len; i++) {
-                 text += newData[i] + "<br>";
-                 }
-                document.getElementById("demo").innerHTML = text;
-                });
-                function myFunction() {
-                  window.ReactNativeWebView.postMessage('Hello')
-              }
-           </script>
+            html: `<body style="display:flex;justify-content:center;flex-direction:column;align-items:center">
+                      <h2>React native webview</h2>
+                      <h2>React native webview data transfer between Native to web</h2>
+                      <button style="color:green; height:100;width:300;font-size:30px"
+                        onclick="myFunction()">Close webview</button>
+                      <p id="demo"></p>
+                      <script>
+                       var newData = [];
+                       document.addEventListener("message", function(data) {
+                       newData.push(data.data)
+                       alert(data.data)
+                       var i, len, text;
+                       for (i = 0, len = newData.length, text = ""; i < len; i++) {
+                       text += newData[i] + "<br>";
+                       }
+                       document.getElementById("demo").innerHTML = text;
+                      });
+                      function myFunction() {
+                      window.ReactNativeWebView.postMessage('Hello')
+                      }
+                    </script>
            </body>`,
           }}
           renderLoading={LoadingIndicatorView}
